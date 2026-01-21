@@ -28,17 +28,17 @@ const Cards8 = () => {
     },
   ];
   return (
-    <div className="m-auto w-[1205px]">
+    <div className="m-auto md:w-[1205px]">
       <p className="text-lg font-semibold">Reason to Buy</p>
-      <div className="flex flex-wrap justify-around gap-3  my-6">
+      <div className="grid grid-cols-2 gap-6 my-6">
         {list.map((item, index) => {
           return (
             <div
               key={index}
-              className="bg-[#0078d5] text-white w-[595px] h-[200px] rounded-xl flex flex-wrap p-5 items-center"
+              className="bg-[#0078d5] text-white rounded-xl grid grid-cols-1 md:grid-cols-2 p-5 items-center"
             >
               <img src={item.src} alt="" className="w-[300px] h-[140px]" />
-              <div className="flex flex-col w-[200px] items-center">
+              <div className="flex flex-col  items-center">
                 <h1 className="text-[19px] font-mono text-center">{item.h1}</h1>
                 <p className="text-[19px] font-mono text-center">{item.p}</p>
                 <button className="bg-[#f88b2a] text-sm rounded-sm w-24 h-7 mt-3">
