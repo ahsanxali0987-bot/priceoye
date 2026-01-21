@@ -191,11 +191,11 @@ const Cards4 = () => {
       <p className="text-[#202020] text-xl font-semibold max-w-[1195px] mx-auto py-8">
         Shop by Brand
       </p>
-      <div className="max-w-[1195px] mx-auto grid sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-9 gap-2">
+      <div className="max-w-[1195px] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-2">
         {brands.map((item, buts) => {
           return (
             <div
-              className="my-2 bg-white justify-center max-w-40 max-h-48"
+              className="my-2 bg-black justify-center max-w-40 max-h-48"
               key={buts}
             >
               <img

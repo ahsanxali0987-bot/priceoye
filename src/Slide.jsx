@@ -85,7 +85,7 @@ const SimpleSlider = () => {
               key={index}
               className="outline-none cursor-pointer group hover:border-b-[3px] hover:border-[#48afff] hover:bg-[#f1f3f6]"
             >
-              <div className="flex flex-col items-center justify-center text-center py-2 px-4">
+              <div className="flex flex-col items-center justify-center text-center py-[6px]">
                 <div>
                   <img
                     src={cat.img}

@@ -60,13 +60,13 @@ const Card = () => {
           src="https://static.priceoye.pk/images/sale/sale-home-mb.png"
           alt=""
         />
-        <p className="absolute capitalize items-center font-semibold text-white text-[41px] pt-[20px]">
+        <p className="absolute capitalize items-center font-semibold text-white sm:text-[35px] lg:text-[40px] pt-[20px]">
           {" "}
           new year sale
         </p>
       </div>
-      <div className="bg-[#09907e]">
-        <div className="py-[50px] max-w-[1195px] m-auto">
+      <div className="bg-[#09907e] ">
+        <div className="py-[50px] max-w-[1195px]  m-auto">
           <div className="flex justify-end">
             <button className="bg-[#fafafa] text-sm font-semibold py-[8px] px-[20px] mb-10">
               View All
