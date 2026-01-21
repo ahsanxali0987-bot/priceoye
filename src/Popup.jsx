@@ -200,6 +200,7 @@ const Popup = ({ shows, hides }) => {
         className="fixed inset-0 bg-black/50 backdrop-blur-none z-40"
         onClick={hides}
       ></div>
+      
       <div
         className={`fixed  h-screen w-[358px] bg-white z-50 shadow-lg overflow-y-scroll no-scrollbar scroll-smooth inset-0 `}
       >
