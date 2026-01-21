@@ -76,7 +76,6 @@ const SimpleSlider = () => {
     ]
   };
 
-
   return (
     <div className="bg-white h-[80px] ">
       <div className="max-w-[1210px] mx-auto">

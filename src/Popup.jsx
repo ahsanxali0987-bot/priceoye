@@ -25,7 +25,7 @@ const Popup = ({ shows, hides }) => {
     {
       key: "mobile",
       label: "Mobiles",
-      icon: <FiSmartphone />,
+      icon: <FiSmartphone size={23} />,
       items: [
         "Samsung",
         "Infinix",
@@ -41,7 +41,7 @@ const Popup = ({ shows, hides }) => {
     {
       key: "smartwatch",
       label: "Smart Watches",
-      icon: BsSmartwatch,
+      icon: <BsSmartwatch size={23} />,
       items: [
         "Faster",
         "Nothing",
@@ -56,7 +56,7 @@ const Popup = ({ shows, hides }) => {
     {
       key: "earbuds",
       label: "Wireless Earbuds",
-      icon: BsEarbuds,
+      icon: <BsEarbuds size={23} />,
       items: [
         "Xiaomi",
         "Audionic",
@@ -72,30 +72,25 @@ const Popup = ({ shows, hides }) => {
     {
       key: "air",
       label: "Air Purifiers",
-      icon: RiRouterLine,
+      icon: <RiRouterLine size={23} />,
       items: ["Xiaomi", "Beurer", "More Brands"],
     },
     {
       key: "personalcare",
       label: "Personal Care",
-      icon: MdOutlinePerson2,
+      icon: <MdOutlinePerson2 size={23} />,
       items: [],
     },
     {
       key: "accessories",
       label: "Mobile Accessories",
-      icon: AiOutlineMobile,
-      subButtons: [
-        { label: "Charging Cables", icon: LuCable },
-        { label: "Wireless Chargers", icon: RiWirelessChargingFill },
-        { label: "Wall Chargers", icon: RiBattery2ChargeLine },
-        { label: "Car Chargers", icon: TiBatteryCharge },
-      ],
+      icon: <AiOutlineMobile size={23} />,
+      items: [],
     },
     {
       key: "speaker",
       label: "Bluetooth Speakers",
-      icon: CiSpeaker,
+      icon: <CiSpeaker size={23} />,
       items: [
         "Xiaomi",
         "Sound Crush",
@@ -111,49 +106,32 @@ const Popup = ({ shows, hides }) => {
     {
       key: "power",
       label: "Power Banks",
-      icon: BsPower,
+      icon: <BsPower size={23} />,
       items: ["Xiaomi", "Baseus", "Faster", "Joyroom", "More Brands"],
     },
     {
       key: "tablet",
       label: "Tablets",
-      icon: MdTabletAndroid,
-      items: [
-        "Apple",
-        "Samsung",
-        "Xiaomi",
-        "G-Tide",
-        "Infinix",
-        "Huawei",
-        "Itel",
-        "Techno",
-        "More Brands",
-      ],
+      icon: <MdTabletAndroid size={23} />,
+      items: [],
     },
     {
       key: "laptop",
       label: "Laptops",
-      icon: FaLaptop,
+      icon: <FaLaptop size={23} />,
       items: ["Lenovo", "Dell", "HP", "Apple", "Asus", "Acer", "More Brands"],
     },
     {
       key: "appliance",
       label: "TV & Home Appliances",
-      icon: BiFridge,
-      subButtons: [
-        { label: "Led-TV", icon: FaTv },
-        { label: "AC", icon: TbAirConditioningDisabled },
-        { label: "Fridge", icon: RiFridgeLine },
-      ],
+      icon: <BiFridge size={23} />,
+      items: [],
     },
     {
       key: "auto",
       label: "Auto",
-      icon: GiCartwheel,
-      subButtons: [
-        { label: "Electric Bike", icon: PiMotorcycleBold },
-        { label: "Motorcycle", icon: FaMotorcycle },
-      ],
+      icon: <GiCartwheel size={23} />,
+      items: [],
     },
   ];
 
@@ -200,7 +178,6 @@ const Popup = ({ shows, hides }) => {
         className="fixed inset-0 bg-black/50 backdrop-blur-none z-40"
         onClick={hides}
       ></div>
-      
       <div
         className={`fixed  h-screen w-[358px] bg-white z-50 shadow-lg overflow-y-scroll no-scrollbar scroll-smooth inset-0 `}
       >
@@ -232,55 +209,67 @@ const Popup = ({ shows, hides }) => {
             </button>
           </div>
         </div>
-        <div className="flex flex-col gap-[5px] p-[30px]">
-          <h1 className="text-[#798e9c] font-[550] mb-1 text-[13px]">
+        <div className="flex flex-col gap-[5px] my-7">
+          <h1 className="text-[#798e9c] font-[500] pl-[31px] mb-2 text-[13px]">
             CATEGORIES
           </h1>
           {categories.map((item, indexs) => (
-            <div key={indexs}>
+            <div
+              className={`w-[285px] mx-auto cursor-pointer ${
+                open === indexs ? "bg-[#f8f9fa] rounded-xl" : ""
+              }`}
+              key={indexs}
+            >
               <div
-                className="flex items-center justify-between cursor-pointer py-2"
+                className="flex justify-between items-center rounded-lg py-1 px-4"
                 onClick={() => display(indexs)}
               >
-                <div className="flex items-center gap-2">
-                  {item.icon}
-                  <p className="text-[15px]">{item.label}</p>
-                </div>
+                <button className="text-[#777777] flex gap-2 mb-1 text-[13px]">
+                  <p className="text-black outline-none">{item.icon}</p>
+                  {item.label}
+                </button>
                 <IoIosArrowDown
-                  size={20}
-                  className={`transition-transform duration-300 ${
+                  size={17}
+                  className={`transition-transform duration-300 text-[#202020] ${
                     open === indexs ? "rotate-180" : ""
                   }`}
                 />
               </div>
               {open === indexs && (
-                <div className="ml-6 flex flex-col gap-1 text-[14px] text-[#555]">
-                  {item.items.map((item1, indexs1) => (
-                    <p
-                      key={indexs1}
-                      className="cursor-pointer hover:text-black"
-                    >
-                      {item1}
-                    </p>
-                  ))}
+                <div>
+                  <hr className="text-[#cccccc] py-1" />
+                  <div className="flex flex-col py-1 px-[21px]">
+                    {item.items.map((item1, indexs1) => (
+                      <p
+                        key={indexs1}
+                        className="text-[13px] text-[#404040] py-1"
+                      >
+                        {item1}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
           ))}
         </div>
-        <div className="flex flex-col gap-3 p-[20px]">
-          <p className="text-[#6d6d6d] text-[15px]">POPULAR LISTS</p>
+        <div className="flex flex-col gap-3 py-[45px] pl-[30px]">
+          <p className="text-[#6d6d6d] text-[11.5px] font-[500] pb-2">
+            POPULAR LISTS
+          </p>
           {popularLists.map((list, i) => (
             <p
               key={i}
-              className="text-[#6d6d6d] text-[13px] cursor-pointer w-fit border border-[#6d6d6d] py-1 px-3 rounded-md hover:text-white hover:bg-[#48afff]"
+              className="text-[#6d6d6d] text-[13px] font-[500] cursor-pointer w-fit border border-[#6d6d6d] py-[3px] px-[13px] rounded-[5px] hover:text-white hover:bg-[#48afff]"
             >
               {list}
             </p>
           ))}
         </div>
-        <div className="flex flex-col gap-3 p-[20px]">
-          <p className="text-[#6d6d6d] text-[15px]">MAIN NAVIGATION</p>
+        <div className="flex flex-col gap-2 pl-[30px] py-10">
+          <p className="text-[#8599a5] text-[11.5px] font-[500]">
+            MAIN NAVIGATION
+          </p>
           {navigation.map((nav, i) => (
             <p
               key={i}
