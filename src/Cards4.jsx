@@ -129,7 +129,7 @@ const Cards4 = () => {
   ];
 
   return (
-    <div className="bg-[url(https://static.priceoye.pk/images/categories/section-mobiles-bg-md.png)] mt-10">
+    <div className="bg-[url(https://static.priceoye.pk/images/categories/section-mobiles-bg-md.png)] mt-10 px-4 sm:px-4 md:px-6 lg:px-8">
       <div className="max-w-[1195px] mx-auto flex justify-between items-center pt-12 px-2">
         <p className="text-white font-semibold font-sans text-xl">
           Latest Mobiles

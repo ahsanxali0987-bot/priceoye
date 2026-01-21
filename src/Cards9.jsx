@@ -54,29 +54,31 @@ const Cards9 = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto sm:px-4 md:px-6 lg:px-8">
+    <div className="max-w-[1280px] mx-auto px-4 sm:px-4 md:px-6 lg:px-8">
       <p className="py-8 text-lg font-semibold">
         <span className="text-red-600">Top Deals</span> In Xiaomi
       </p>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-        {list.map((item, index) => (
+        {list.map((item) => (
           <div
-            key={index}
-            className="bg-white p-4 rounded-lg flex flex-col justify-between"
+            key={item.id}
+            className="bg-white rounded-lg p-4 flex flex-col justify-between"
           >
             <div className="flex justify-center mb-3">
               <img
                 src={item.src}
-                alt={item.h1}
+                alt={item.title}
                 className="w-24 h-24 object-contain"
               />
             </div>
             <h3 className="text-sm text-gray-700 mb-2">{item.h1}</h3>
-            <h2 className="font-semibold text-lg">{item.h2}</h2>
+            <h2 className="font-semibold text-lg">
+              <span className="text-base">Rs</span> {item.h2}
+            </h2>
             <div className="flex justify-between items-center mt-2">
-              <del className="text-gray-500 text-xs">{item.h3}</del>
+              <del className="text-gray-500 text-xs">Rs {item.h3}</del>
               <span className="text-green-600 text-xs bg-green-50 px-2 py-1 rounded-md font-medium">
-                {item.h4}
+                {item.h4}% OFF
               </span>
             </div>
             <img

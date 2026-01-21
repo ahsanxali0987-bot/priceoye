@@ -5,15 +5,22 @@ import { IoLogoLinkedin } from "react-icons/io";
 
 const Footer = () => {
   return (
-    <div className="bg-[#48afff] mt-10">
+    <div className="bg-[#48afff] mt-10 mb-[140px] md:mb-0">
+      <div className="max-w-[1195px] mx-auto px-3">
+        <img
+          className="w-32 md:w-40 lg:w-42 h-auto block md:hidden pt-9"
+          src="https://static.priceoye.pk/images/logo.svg"
+          alt="logo"
+        />
+      </div>
       <div className="py-8 flex flex-wrap justify-between max-w-[1195px] mx-auto px-3">
         <div>
           <img
-            className="sm:w-32 md:w-40 lg:w-42 h-auto"
+            className="sm:w-32 md:w-40 lg:w-42 h-auto hidden md:block pb-6"
             src="https://static.priceoye.pk/images/logo.svg"
             alt="logo"
           />
-          <ul className="flex flex-col gap-2 py-6">
+          <ul className="flex flex-col gap-2 py-">
             <li className="text-white text-sm cursor-pointer">About Us</li>
             <li className="text-white text-sm cursor-pointer">FAQS</li>
             <li className="text-white text-sm cursor-pointer">Contact Us</li>
@@ -25,8 +32,10 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <h1 className="text-white text-lg">Customer Service</h1>
-          <ul className="flex flex-col gap-2 py-6">
+          <h1 className="text-white text-lg hidden md:block pb-6">
+            Customer Service
+          </h1>
+          <ul className="flex flex-col gap-2">
             <li className="text-white text-sm cursor-pointer">Help Centre</li>
             <li className="text-white text-sm cursor-pointer">
               Privacy Policy
@@ -54,9 +63,9 @@ const Footer = () => {
           <img src="play.png" alt="" className="w-[180px]" />
         </div>
       </div>
-      <div className="bg-[#3eabff]  py-4 text-white">
+      <div className="bg-[#3eabff]  py-4 text-white px-4 sm:px-4 md:px-6 lg:px-8">
         <div className="max-w-[1195px] mx-auto flex justify-around">
-          <p className=" text-[12px] cursor-pointer text-white">
+          <p className=" text-[14px] cursor-pointer text-white">
             Copyright © 2025 Priceoye.pk
           </p>
           <ul className="flex gap-2 items-center text-[#3eabff]">

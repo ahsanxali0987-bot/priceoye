@@ -17,6 +17,7 @@ import Imege from "./Imege.jsx";
 import Image1 from "./Image1.jsx";
 import Card from "./Card.jsx";
 import Cards5 from "./Cards5.jsx";
+import Footer2 from "./Footer2.jsx";
 
 const list = [
   {
@@ -312,6 +313,7 @@ const App = () => {
       <Cards11 list={list} />
       <Cards10 />
       <Footer />
+      <Footer2 />
     </div>
   );
 };

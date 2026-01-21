@@ -54,7 +54,7 @@ const Card = () => {
 
   return (
     <div>
-      <div className="relative flex justify-center mt-8">
+      <div className="relative flex justify-center mt-8 ">
         <img
           className="h-full w-auto"
           src="https://static.priceoye.pk/images/sale/sale-home-mb.png"
@@ -65,7 +65,7 @@ const Card = () => {
           new year sale
         </p>
       </div>
-      <div className="bg-[#09907e] ">
+      <div className="bg-[#09907e] px-4 sm:px-4 md:px-6 lg:px-8">
         <div className="py-[50px] max-w-[1195px]  m-auto">
           <div className="flex justify-end">
             <button className="bg-[#fafafa] text-sm font-semibold py-[8px] px-[20px] mb-10">

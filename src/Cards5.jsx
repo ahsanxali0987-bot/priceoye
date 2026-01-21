@@ -57,7 +57,7 @@ const Cards5 = () => {
     },
   ];
   return (
-    <div className="w-[1200px] m-auto">
+    <div className="max-w-[1200px] m-auto px-4 sm:px-4 md:px-6 lg:px-8">
       <div className="text-center py-10">
         <p className="text-[#404040] text-[19px] font-semibold">
           Customer Review
@@ -66,7 +66,7 @@ const Cards5 = () => {
           What our Customers say about Priceoye.pk
         </p>
       </div>
-      <div className="grid grid-cols-9 gap-4">
+      <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-9 gap-4">
         {list.map((item, index) => {
           return (
             <div key={index}>
@@ -75,7 +75,7 @@ const Cards5 = () => {
           );
         })}
       </div>
-      <div className="grid grid-cols-3 gap-2 py-7 justify-between">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 py-7 justify-between">
         {list2.map((item1, index1) => {
           return (
             <div

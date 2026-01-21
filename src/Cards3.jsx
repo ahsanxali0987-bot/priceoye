@@ -42,7 +42,7 @@ const Cards3 = () => {
   ];
 
   return (
-    <div className="max-w-[1195px] mx-auto sm:px-6 md:px-4 lg:px-2 xl:px-0 ">
+    <div className="max-w-[1195px] mx-auto px-4 sm:px-4 md:px-6 lg:px-8">
       <div className="text-center text-[#404040">
         <p className="font-semibold text-lg text-[#404040]">Best Seller</p>
         <p className="text-[#404040]">Get the best prices in town</p>
@@ -88,13 +88,6 @@ const Cards3 = () => {
             >
               <div className="flex justify-between gap-2">
                 <div>
-                  <div className="flex items-center gap-1 mb-1">
-                    <img
-                      src="https://images.priceoye.pk/badges/priceoye-sale-20260107-94x7e.png"
-                      alt=""
-                      className="w-10 h-3 object-contain"
-                    />
-                  </div>
                   <p className="text-sm font-semibold text-gray-700 leading-tight">
                     {card.title}
                   </p>

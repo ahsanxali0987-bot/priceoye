@@ -28,9 +28,9 @@ const Cards8 = () => {
     },
   ];
   return (
-    <div className="m-auto md:w-[1205px]">
+    <div className="m-auto max-w-[1205px] px-4 sm:px-4 md:px-6 lg:px-8">
       <p className="text-lg font-semibold">Reason to Buy</p>
-      <div className="grid grid-cols-2 gap-6 my-6">
+      <div className="grid grid-cols-2 gap-4 md:gap-6 my-6">
         {list.map((item, index) => {
           return (
             <div
@@ -39,8 +39,12 @@ const Cards8 = () => {
             >
               <img src={item.src} alt="" className="w-[300px] h-[140px]" />
               <div className="flex flex-col  items-center">
-                <h1 className="text-[19px] font-mono text-center">{item.h1}</h1>
-                <p className="text-[19px] font-mono text-center">{item.p}</p>
+                <p className="text-[13px] md:text-[19px] font-mono text-center">
+                  {item.h1}
+                </p>
+                <p className="text-[13px] md:text-[19px] font-mono text-center">
+                  {item.p}
+                </p>
                 <button className="bg-[#f88b2a] text-sm rounded-sm w-24 h-7 mt-3">
                   {item.button}
                 </button>

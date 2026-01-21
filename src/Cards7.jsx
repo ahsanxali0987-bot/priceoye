@@ -38,7 +38,7 @@ const brands = [
 const Hex = ({ logo, name }) => {
   return (
     <div
-      className="relative w-[120px] h-[104px] flex items-center justify-center
+      className="relative h-[80px] w-[80px] md:w-[100px] md:h-[100px] flex items-center justify-center
       cursor-pointer"
     >
       <div

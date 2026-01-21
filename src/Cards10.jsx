@@ -23,26 +23,32 @@ const Cards10 = () => {
       p: "All Over Pakistan",
     },
   ];
-  
+
   return (
-    <div className="bg-white mt-10">
-      <div className="grid sm:grid-cols-2 md:grid-cols-4 max-w-[1195px] mx-auto items-center gap-10">
-        {list.map((item, index) => {
-          return (
-            <div
-              className="text-center flex flex-col items-center py-7"
-              key={index}
-            >
-              <img src={item.src} alt="" className="w-20 mx-10 pb-3" />
-              <div>
-                <h1 className="font-semibold text-sm text-[#202020]">
-                  {item.h1}
-                </h1>
-                <p className="text-[12px] text-[#6a7176]">{item.p}</p>
-              </div>
+    <div className="bg-white mt-10 px-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 max-w-[1200px] mx-auto gap-4 py-8">
+        {list.map((item, index) => (
+          <div
+            key={index}
+            className="flex flex-row lg:flex-col items-center justify-center text-center md:text-left lg:text-center gap-3 px-2"
+          >
+            <div className="flex-shrink-0">
+              <img
+                src={item.src}
+                alt={item.h1}
+                className="w-[45px] md:w-[55px] lg:w-[65px] h-auto object-contain"
+              />
             </div>
-          );
-        })}
+            <div>
+              <h1 className="font-[500] text-[12.5px] md:text-[15px] text-[#202020] leading-tight">
+                {item.h1}
+              </h1>
+              <p className="text-[11px] md:text-[12px] text-[#6a7176] mt-0.5">
+                {item.p}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
