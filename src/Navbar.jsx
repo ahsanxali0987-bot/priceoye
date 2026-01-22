@@ -13,7 +13,9 @@ const buttons = [
 
 const Navbar = ({ list }) => {
   const [open, setOpen] = useState(false);
+
   const [filter, setFilter] = useState("");
+
   const [showResults, setShowResults] = useState(false);
 
   const filteredItems = list.filter((item) =>
@@ -22,8 +24,8 @@ const Navbar = ({ list }) => {
 
   return (
     <div>
-      <div className="bg-[#48afff] h-[72px] flex items-center px-[6px] justify-between">
-        <div className="flex items-center gap-4 text-white">
+      <div className="bg-[#48afff] h-[55px] md:h-[72px] flex items-center px-[3px] md:px-[6px] justify-between">
+        <div className="flex items-center gap-2 md:gap-4 text-white">
           <RiMenu2Fill
             size={27}
             onClick={() => setOpen(true)}
@@ -32,15 +34,15 @@ const Navbar = ({ list }) => {
           <img
             src="https://static.priceoye.pk/images/logo.svg"
             alt="logo"
-            className="w-24 md:w-32"
+            className="w-28 md:w-32"
           />
         </div>
-        <div className="flex-1 px-4 hidden sm:block">
-          <div className="flex items-center bg-white rounded-lg overflow-hidden max-w-[400px] mx-auto">
+        <div className="px-4 block">
+          <div className="flex items-center bg-white rounded-md md:rounded-lg overflow-hidden max-w-[400px] mx-auto">
             <input
               type="text"
               placeholder="Search..."
-              className="flex-1 h-[48px] px-2 outline-none text-[#86759b]"
+              className="w-[170px] md:w-[370px] h-[38px] md:h-[48px] px-2 outline-none text-[#86759b]"
               value={filter}
               onChange={(e) => {
                 setFilter(e.target.value);
@@ -61,23 +63,6 @@ const Navbar = ({ list }) => {
               {btn.text}
             </button>
           ))}
-        </div>
-      </div>
-      <div className="sm:hidden px-3 py-2 bg-[#48afff]">
-        <div className="flex items-center bg-white rounded-lg">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="flex-1 h-[45px] px-3 outline-none"
-            value={filter}
-            onChange={(e) => {
-              setFilter(e.target.value);
-              setShowResults(e.target.value.length > 0);
-            }}
-          />
-          <button className="px-4 text-[#48afff]">
-            <IoMdMic size={20} />
-          </button>
         </div>
       </div>
       <Popup shows={open} hides={() => setOpen(false)} />
