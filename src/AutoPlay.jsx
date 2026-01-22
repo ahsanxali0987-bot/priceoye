@@ -19,7 +19,7 @@ const PrevArrow = ({ onClick }) => (
   <button
     onClick={onClick}
     className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-sm opacity-100 transition z-10 
-    hover:bg-black"
+    hover:bg-black hidden md:block"
   >
     <FaArrowLeft size={15} />
   </button>
@@ -28,7 +28,8 @@ const PrevArrow = ({ onClick }) => (
 const NextArrow = ({ onClick }) => (
   <button
     onClick={onClick}
-    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-sm opacity-100 transition z-10 hover:bg-black"
+    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-sm opacity-100 transition z-10 
+    hover:bg-black hidden md:block"
   >
     <FaArrowRight size={15} />
   </button>
@@ -48,7 +49,7 @@ function AutoPlay() {
   };
 
   return (
-    <div className="slider-container w-full group relative mt-4">
+    <div className="slider-container w-full group md:relative mt-4">
       <Slider {...settings}>
         {bannerImages.map((img, index) => (
           <div key={index} className="outline-none">

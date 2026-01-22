@@ -25,7 +25,7 @@ const Popup = ({ shows, hides }) => {
     {
       key: "mobile",
       label: "Mobiles",
-      icon: <FiSmartphone size={23} />,
+      icon: FiSmartphone,
       items: [
         "Samsung",
         "Infinix",
@@ -41,7 +41,7 @@ const Popup = ({ shows, hides }) => {
     {
       key: "smartwatch",
       label: "Smart Watches",
-      icon: <BsSmartwatch size={23} />,
+      icon: BsSmartwatch,
       items: [
         "Faster",
         "Nothing",
@@ -56,7 +56,7 @@ const Popup = ({ shows, hides }) => {
     {
       key: "earbuds",
       label: "Wireless Earbuds",
-      icon: <BsEarbuds size={23} />,
+      icon: BsEarbuds,
       items: [
         "Xiaomi",
         "Audionic",
@@ -72,25 +72,30 @@ const Popup = ({ shows, hides }) => {
     {
       key: "air",
       label: "Air Purifiers",
-      icon: <RiRouterLine size={23} />,
+      icon: RiRouterLine,
       items: ["Xiaomi", "Beurer", "More Brands"],
     },
     {
       key: "personalcare",
       label: "Personal Care",
-      icon: <MdOutlinePerson2 size={23} />,
+      icon: MdOutlinePerson2,
       items: [],
     },
     {
       key: "accessories",
       label: "Mobile Accessories",
-      icon: <AiOutlineMobile size={23} />,
-      items: [],
+      icon: AiOutlineMobile,
+      subButtons: [
+        { label: "Charging Cables", icon: LuCable },
+        { label: "Wireless Chargers", icon: RiWirelessChargingFill },
+        { label: "Wall Chargers", icon: RiBattery2ChargeLine },
+        { label: "Car Chargers", icon: TiBatteryCharge },
+      ],
     },
     {
       key: "speaker",
       label: "Bluetooth Speakers",
-      icon: <CiSpeaker size={23} />,
+      icon: CiSpeaker,
       items: [
         "Xiaomi",
         "Sound Crush",
@@ -106,32 +111,49 @@ const Popup = ({ shows, hides }) => {
     {
       key: "power",
       label: "Power Banks",
-      icon: <BsPower size={23} />,
+      icon: BsPower,
       items: ["Xiaomi", "Baseus", "Faster", "Joyroom", "More Brands"],
     },
     {
       key: "tablet",
       label: "Tablets",
-      icon: <MdTabletAndroid size={23} />,
-      items: [],
+      icon: MdTabletAndroid,
+      items: [
+        "Apple",
+        "Samsung",
+        "Xiaomi",
+        "G-Tide",
+        "Infinix",
+        "Huawei",
+        "Itel",
+        "Techno",
+        "More Brands",
+      ],
     },
     {
       key: "laptop",
       label: "Laptops",
-      icon: <FaLaptop size={23} />,
+      icon: FaLaptop,
       items: ["Lenovo", "Dell", "HP", "Apple", "Asus", "Acer", "More Brands"],
     },
     {
       key: "appliance",
       label: "TV & Home Appliances",
-      icon: <BiFridge size={23} />,
-      items: [],
+      icon: BiFridge,
+      subButtons: [
+        { label: "Led-TV", icon: FaTv },
+        { label: "AC", icon: TbAirConditioningDisabled },
+        { label: "Fridge", icon: RiFridgeLine },
+      ],
     },
     {
       key: "auto",
       label: "Auto",
-      icon: <GiCartwheel size={23} />,
-      items: [],
+      icon: GiCartwheel,
+      subButtons: [
+        { label: "Electric Bike", icon: PiMotorcycleBold },
+        { label: "Motorcycle", icon: FaMotorcycle },
+      ],
     },
   ];
 
@@ -225,7 +247,9 @@ const Popup = ({ shows, hides }) => {
                 onClick={() => display(indexs)}
               >
                 <button className="text-[#777777] flex gap-2 mb-1 text-[13px]">
-                  <p className="text-black outline-none">{item.icon}</p>
+                  <span className="text-black outline-none">
+                    <item.icon size={20} />
+                  </span>
                   {item.label}
                 </button>
                 <IoIosArrowDown
@@ -239,14 +263,27 @@ const Popup = ({ shows, hides }) => {
                 <div>
                   <hr className="text-[#cccccc] py-1" />
                   <div className="flex flex-col py-1 px-[21px]">
-                    {item.items.map((item1, indexs1) => (
-                      <p
-                        key={indexs1}
-                        className="text-[13px] text-[#404040] py-1"
-                      >
-                        {item1}
-                      </p>
-                    ))}
+                    {item.items &&
+                      item.items.map((item1, indexs1) => (
+                        <p
+                          key={indexs1}
+                          className="text-[13px] text-[#404040] py-1"
+                        >
+                          {item1}
+                        </p>
+                      ))}
+                    {item.subButtons &&
+                      item.subButtons.map((sub, subIdx) => (
+                        <div
+                          key={subIdx}
+                          className="flex items-center gap-2 py-1"
+                        >
+                          <sub.icon className="text-black" size={18} />
+                          <p className="text-[13px] text-[#404040]">
+                            {sub.label}
+                          </p>
+                        </div>
+                      ))}
                   </div>
                 </div>
               )}

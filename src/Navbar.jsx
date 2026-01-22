@@ -67,7 +67,7 @@ const Navbar = ({ list }) => {
       </div>
       <Popup shows={open} hides={() => setOpen(false)} />
       {showResults ? (
-        <div className="my-10 px-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 bg-gray-50 py-10">
+        <div className="w-[170px] md:w-[370px] mx-auto grid grid-cols-1 gap-4 bg-gray-50">
           {filteredItems.length > 0 ? (
             filteredItems.map((item) => (
               <div
