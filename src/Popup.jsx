@@ -196,7 +196,7 @@ const Popup = ({ shows, hides }) => {
 
   return (
     <div className={`${shows ? "block" : "hidden"}`}>
-      <div
+      <div 
         className="fixed inset-0 bg-black/50 backdrop-blur-none z-40"
         onClick={hides}
       ></div>
