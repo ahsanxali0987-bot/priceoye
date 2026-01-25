@@ -18,7 +18,7 @@ const bannerImages = [
 const PrevArrow = ({ onClick }) => (
   <button
     onClick={onClick}
-    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-sm opacity-100 transition z-10 
+    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-[9.5px] rounded-sm opacity-100 transition z-10 
     hover:bg-black hidden md:block"
   >
     <FaArrowLeft size={15} />
@@ -28,7 +28,7 @@ const PrevArrow = ({ onClick }) => (
 const NextArrow = ({ onClick }) => (
   <button
     onClick={onClick}
-    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-sm opacity-100 transition z-10 
+    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-[9.5px] rounded-sm opacity-100 transition z-10 
     hover:bg-black hidden md:block"
   >
     <FaArrowRight size={15} />

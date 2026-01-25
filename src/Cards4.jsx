@@ -173,29 +173,29 @@ const Cards4 = () => {
           );
         })}
       </div>
-      <p className="text-[#202020] text-xl font-semibold max-w-[1195px] mx-auto">
+      <p className="text-[#202020] text-[17px] md:text-[20px] font-semibold max-w-[1195px] mx-auto">
         Shop by Price
       </p>
-      <div className="max-w-[1195px] mx-auto gap-4 my-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+      <div className="max-w-[1195px] mx-auto gap-[13px] my-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
         {button.map((item, but) => {
           return (
             <button
               key={but}
-              className="bg-[#f90390] text-white text-sm py-4 hover:bg-white hover:text-[#f90390] transition duration-300  rounded-xl"
+              className="bg-[#f90390] text-white text-[11px] md:text-[14px] font-[500] py-3 md:py-4 hover:bg-white hover:text-[#f90390] transition duration-300  rounded-xl"
             >
               {item.title}
             </button>
           );
         })}
       </div>
-      <p className="text-[#202020] text-xl font-semibold max-w-[1195px] mx-auto py-8">
+      <p className="text-[#202020] text-[17px] md:text-[20px] font-semibold max-w-[1195px] mx-auto py-8">
         Shop by Brand
       </p>
       <div className="max-w-[1195px] mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-2">
         {brands.map((item, buts) => {
           return (
             <div
-              className="my-2 bg-black justify-center max-w-40 max-h-48"
+              className="my-2 bg-white justify-center max-w-40 max-h-48 rounded-lg"
               key={buts}
             >
               <img

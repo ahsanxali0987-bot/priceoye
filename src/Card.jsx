@@ -60,7 +60,7 @@ const Card = () => {
           src="https://static.priceoye.pk/images/sale/sale-home-mb.png"
           alt=""
         />
-        <p className="absolute capitalize items-center font-semibold text-white sm:text-[35px] lg:text-[40px] pt-[20px]">
+        <p className="absolute capitalize items-center font-semibold text-white sm:text-[35px] lg:text-[40px] pt-[10px] md:pt-[20px]">
           {" "}
           new year sale
         </p>

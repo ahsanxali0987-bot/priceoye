@@ -1,5 +1,26 @@
 import React from "react";
 import Slider from "react-slick";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+
+const PrevArrow = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-[9.5px] rounded-sm opacity-100 transition z-10 
+    hover:bg-black hidden md:block"
+  >
+    <FaArrowLeft size={15} />
+  </button>
+);
+
+const NextArrow = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-[9.5px] rounded-sm opacity-100 transition z-10 
+    hover:bg-black hidden md:block"
+  >
+    <FaArrowRight size={15} />
+  </button>
+);
 
 const SimpleSlider = () => {
   const categories = [
@@ -41,44 +62,37 @@ const SimpleSlider = () => {
     },
   ];
 
-  var settings = {
+  const settings = {
     dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 8,
-    slidesToScroll: 4,
-    initialSlide: 0,
+    slidesToScroll: 3,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
+        breakpoint: 1200,
+        settings: { slidesToShow: 7, slidesToScroll: 3 },
       },
       {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
+        breakpoint: 1024,
+        settings: { slidesToShow: 5, slidesToScroll: 2 },
+      },
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 4, slidesToScroll: 2, arrows: false },
       },
       {
         breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+        settings: { slidesToShow: 3.5, slidesToScroll: 2, arrows: false },
+      },
+    ],
   };
 
   return (
     <div className="bg-white h-[80px] px-4 sm:px-4 md:px-6 lg:px-8">
-      <div className="max-w-[1210px] mx-auto">
+      <div className="max-w-[1210px] mx-auto relative">
         <Slider {...settings}>
           {categories.map((cat, index) => (
             <div

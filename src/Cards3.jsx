@@ -48,7 +48,7 @@ const Cards3 = () => {
         <p className="text-[#404040]">Get the best prices in town</p>
       </div>
       <div className="my-8 grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="bg-white rounded-lg p-5">
+        <article className="bg-white rounded-lg p-5">
           <div className="flex items-center gap-2 mb-3">
             <img
               src="https://images.priceoye.pk/badges/priceoye-sale-20260107-94x7e.png"
@@ -79,24 +79,26 @@ const Cards3 = () => {
               11% OFF
             </span>
           </div>
-        </div>
-        <div className="grid grid-cols-2 gap-4">
+        </article>
+        <article className="grid grid-cols-2 gap-4">
           {cardsData.map((card, index) => (
             <div
               key={index}
               className="bg-white rounded-lg p-4 flex flex-col justify-between pb-8 overflow-hidden"
             >
-              <div className="flex justify-between gap-2">
+              <div className="flex flex-col md:flex-row justify-between gap-2">
                 <div>
                   <p className="text-sm font-semibold text-gray-700 leading-tight">
                     {card.title}
                   </p>
                 </div>
-                <img
-                  src={card.image}
-                  alt=""
-                  className="max-w-36 max-h-36 object-contain"
-                />
+                <div className="flex justify-center">
+                  <img
+                    src={card.image}
+                    alt=""
+                    className="w-24 md:w-36 h-24 md:h-36 object-contain"
+                  />
+                </div>
               </div>
               <div className="inline-flex items-center gap-1 bg-[#fff7e6] text-xs  px-2 py-1 rounded-md w-28 mt-2">
                 <FaStar className="text-[#ffc107]" />
@@ -116,7 +118,7 @@ const Cards3 = () => {
               </div>
             </div>
           ))}
-        </div>
+        </article>
       </div>
     </div>
   );

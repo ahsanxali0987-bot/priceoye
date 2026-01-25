@@ -20,7 +20,7 @@ const Footer = () => {
             src="https://static.priceoye.pk/images/logo.svg"
             alt="logo"
           />
-          <ul className="flex flex-col gap-2 py-">
+          <ul className="flex flex-col gap-2">
             <li className="text-white text-sm cursor-pointer">About Us</li>
             <li className="text-white text-sm cursor-pointer">FAQS</li>
             <li className="text-white text-sm cursor-pointer">Contact Us</li>

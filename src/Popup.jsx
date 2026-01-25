@@ -195,21 +195,27 @@ const Popup = ({ shows, hides }) => {
   };
 
   return (
-    <div className={`${shows ? "block" : "hidden"}`}>
-      <div 
-        className="fixed inset-0 bg-black/50 backdrop-blur-none z-40"
+    <div
+      className={`fixed inset-0 z-50 transition-all duration-500 ${shows ? "visible" : "invisible"}`}
+    >
+      <div
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-500 ${
+          shows ? "opacity-100" : "opacity-0"
+        }`}
         onClick={hides}
       ></div>
       <div
-        className={`fixed  h-screen w-[358px] bg-white z-50 shadow-lg overflow-y-scroll no-scrollbar scroll-smooth inset-0 `}
+        className={`fixed h-screen w-[320px] md:w-[358px] bg-white shadow-2xl overflow-y-scroll no-scrollbar scroll-smooth inset-y-0 left-0 transform transition-transform duration-500 ease-in-out ${
+          shows ? "translate-x-0" : "-translate-x-full"
+        }`}
       >
-        <div className="bg-[#48afff] px-8 pt-[45px] pb-[48px]">
-          <div className="flex justify-end">
+        <div className="bg-[#48afff] px-8 pt-[45px] pb-[48px] relative">
+          <div className="flex justify-end absolute right-4 top-4">
             <button
-              className="rounded-full bg-[#ebebeb] text-[#5b5b5b] text-[11px] p-1 flex text-end"
+              className="rounded-full bg-white/20 hover:bg-white/40 text-white p-1 transition-colors"
               onClick={hides}
             >
-              <CgClose className="font-bold" />
+              <CgClose size={18} />
             </button>
           </div>
           <div className="bg-[#48afff] py-2">
@@ -219,15 +225,15 @@ const Popup = ({ shows, hides }) => {
               alt="logo"
             />
           </div>
-          <button className="bg-[white] text-[#48afff] hover:bg-[#48afff] hover:text-white w-[110px] h-[40px] text-[13px] rounded border border-white">
+          <button className="bg-white text-[#48afff] w-[110px] h-[40px] text-[13px] font-semibold rounded border border-white mt-4">
             Log in
           </button>
           <div className="mt-[20px] text-white flex flex-col gap-3">
-            <button className="flex text-[13px] items-center gap-2 hover:pl-5 duration-300 text-base">
-              <CiLocationOn className="text-[30px]" /> Track My Order
+            <button className="flex text-[14px] items-center gap-2 hover:translate-x-2 transition-transform duration-300">
+              <CiLocationOn className="text-[24px]" /> Track My Order
             </button>
-            <button className="flex text-[13px] items-center gap-2 hover:pl-5 duration-300 text-base">
-              <TbFileSpreadsheet className="text-[30px]" /> Launch a Complaint
+            <button className="flex text-[14px] items-center gap-2 hover:translate-x-2 transition-transform duration-300">
+              <TbFileSpreadsheet className="text-[24px]" /> Launch a Complaint
             </button>
           </div>
         </div>
@@ -297,7 +303,7 @@ const Popup = ({ shows, hides }) => {
           {popularLists.map((list, i) => (
             <p
               key={i}
-              className="text-[#6d6d6d] text-[13px] font-[500] cursor-pointer w-fit border border-[#6d6d6d] py-[3px] px-[13px] rounded-[5px] hover:text-white hover:bg-[#48afff]"
+              className="text-[#6d6d6d] text-[12px] font-[500] cursor-pointer w-fit border border-[#6d6d6d] py-[3px] px-[13px] rounded-[5px] hover:text-white hover:bg-[#48afff]"
             >
               {list}
             </p>
@@ -308,10 +314,7 @@ const Popup = ({ shows, hides }) => {
             MAIN NAVIGATION
           </p>
           {navigation.map((nav, i) => (
-            <p
-              key={i}
-              className="text-[#6d6d6d] text-[13px] cursor-pointer hover:text-[#48afff]"
-            >
+            <p key={i} className="text-[#6d6d6d] text-[13px] cursor-pointer">
               {nav}
             </p>
           ))}
