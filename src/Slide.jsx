@@ -67,7 +67,7 @@ const SimpleSlider = () => {
     infinite: false,
     speed: 500,
     slidesToShow: 8,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [

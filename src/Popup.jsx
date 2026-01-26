@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   RiBattery2ChargeLine,
   RiFridgeLine,
@@ -205,29 +206,33 @@ const Popup = ({ shows, hides }) => {
         onClick={hides}
       ></div>
       <div
-        className={`fixed h-screen w-[320px] md:w-[358px] bg-white shadow-2xl overflow-y-scroll no-scrollbar scroll-smooth inset-y-0 left-0 transform transition-transform duration-500 ease-in-out ${
+        className={`fixed h-screen w-full md:w-[358px] bg-white shadow-2xl overflow-y-scroll no-scrollbar scroll-smooth inset-y-0 left-0 transform transition-transform duration-500 ease-in-out ${
           shows ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="bg-[#48afff] px-8 pt-[45px] pb-[48px] relative">
           <div className="flex justify-end absolute right-4 top-4">
             <button
-              className="rounded-full bg-white/20 hover:bg-white/40 text-white p-1 transition-colors"
+              className="rounded-full bg-[#ebebeb] text-[#5b5b5b] p-1 transition-colors"
               onClick={hides}
             >
-              <CgClose size={18} />
+              <CgClose size={13} />
             </button>
           </div>
           <div className="bg-[#48afff] py-2">
-            <img
-              className="md:w-[100px] w-[125px]"
-              src="https://static.priceoye.pk/images/logo.svg"
-              alt="logo"
-            />
+            <Link to="/Hoe">
+              <img
+                className="md:w-[100px] w-[125px]"
+                src="https://static.priceoye.pk/images/logo.svg"
+                alt="logo"
+              />
+            </Link>
           </div>
-          <button className="bg-white text-[#48afff] w-[110px] h-[40px] text-[13px] font-semibold rounded border border-white mt-4">
-            Log in
-          </button>
+          <Link to="/Login">
+            <button className="bg-white text-[#48afff] w-[110px] h-[40px] text-[13px] font-semibold rounded border border-white mt-4">
+              Log in
+            </button>
+          </Link>
           <div className="mt-[20px] text-white flex flex-col gap-3">
             <button className="flex text-[14px] items-center gap-2 hover:translate-x-2 transition-transform duration-300">
               <CiLocationOn className="text-[24px]" /> Track My Order

@@ -1,4 +1,5 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { RiMenu2Fill } from "react-icons/ri";
 import { IoMdMic } from "react-icons/io";
 import Popup from "./Popup";
@@ -37,9 +38,7 @@ const Navbar = ({ list }) => {
             className="w-24 md:w-32"
           />
         </div>
-        <div
-          className="flex-1 max-w-[500px] px-2 md:px-4 relative"
-        >
+        <div className="flex-1 max-w-[500px] px-2 md:px-4 relative">
           <div className="flex items-center bg-white rounded-md md:rounded-lg overflow-hidden h-[38px] md:h-[48px]">
             <input
               type="text"
@@ -50,7 +49,6 @@ const Navbar = ({ list }) => {
                 setFilter(e.target.value);
                 setShowResults(e.target.value.length > 0);
               }}
-              onFocus={() => filter.length > 0 && setShowResults(true)}
             />
             <button className="px-3 text-[#48afff] border-l border-gray-100">
               <IoMdMic size={22} />
@@ -92,16 +90,18 @@ const Navbar = ({ list }) => {
             )}
           </div>
         </div>
-        <div className="hidden md:flex items-center gap-2">
-          {buttons.map((btn, index) => (
-            <button
-              key={index}
-              className={`px-6 py-2 text-sm font-medium rounded-md border border-white transition-all ${btn.style}`}
-            >
-              {btn.text}
-            </button>
-          ))}
-        </div>
+        <Link to="/Login">
+          <div className="hidden md:flex items-center gap-2">
+            {buttons.map((btn, index) => (
+              <button
+                key={index}
+                className={`px-6 py-2 text-sm font-medium rounded-md border border-white transition-all ${btn.style}`}
+              >
+                {btn.text}
+              </button>
+            ))}
+          </div>
+        </Link>
       </div>
       <Popup shows={open} hides={() => setOpen(false)} />
     </div>
