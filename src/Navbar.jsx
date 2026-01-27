@@ -17,11 +17,11 @@ const Navbar = ({ list }) => {
 
   const [filter, setFilter] = useState("");
 
-  const [showResults, setShowResults] = useState(false);
-
   const filteredItems = list.filter((item) =>
     item.title.toLowerCase().includes(filter.toLowerCase()),
   );
+
+  const [showResults, setShowResults] = useState(0);
 
   return (
     <div className="relative z-50">
