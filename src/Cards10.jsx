@@ -23,7 +23,7 @@ const Cards10 = () => {
       p: "All Over Pakistan",
     },
   ];
-
+  
   return (
     <div className="bg-white mt-10 px-4">
       <div className="grid grid-cols-2 md:grid-cols-4 max-w-[1200px] mx-auto gap-4 py-8">

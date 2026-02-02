@@ -178,15 +178,39 @@ const Popup = ({ shows, hides }) => {
   ];
 
   const navigation = [
-    "About",
-    "FAQS",
-    "Careerst",
-    "Contact",
-    "Privacy Policy",
-    "Press & Blog",
-    "Installments Plan",
-    "Terms & Condition",
-    "Warranty Center",
+    {
+      name: "About",
+      path: "/About",
+    },
+    {
+      name: "FAQS",
+      path: "/Faqs",
+    },
+    {
+      name: "Careers",
+      path: "/Career",
+    },
+    {
+      name: "Contact",
+    },
+    {
+      name: "Privacy Policy",
+    },
+    {
+      name: "Press & Blog",
+    },
+    {
+      name: "Installments Plan",
+      path: "/Plans",
+    },
+    {
+      name: "Terms & Condition",
+      path: "/Terms",
+    },
+    {
+      name: "Warranty Center",
+      path: "/Warranty",
+    },
   ];
 
   const [open, setopen] = useState(null);
@@ -197,7 +221,7 @@ const Popup = ({ shows, hides }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 transition-all duration-500 ${shows ? "visible" : "invisible"}`}
+      className={`fixed inset-0 z-50 transition-all duration-1000 ${shows ? "visible" : "invisible"}`}
     >
       <div
         className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-500 ${
@@ -318,10 +342,18 @@ const Popup = ({ shows, hides }) => {
           <p className="text-[#8599a5] text-[11.5px] font-[500]">
             MAIN NAVIGATION
           </p>
-          {navigation.map((nav, i) => (
-            <p key={i} className="text-[#6d6d6d] text-[13px] cursor-pointer">
-              {nav}
-            </p>
+          {navigation.map((item, i) => (
+            <div>
+              <Link to={item.path}>
+                <p
+                  key={i}
+                  className="text-[#6d6d6d] text-[13px] cursor-pointer"
+                  onClick={hides}
+                >
+                  {item.name}
+                </p>
+              </Link>
+            </div>
           ))}
         </div>
       </div>

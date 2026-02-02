@@ -51,7 +51,7 @@ const Card = () => {
       discount: "45",
     },
   ];
-
+  
   return (
     <div>
       <div className="relative flex justify-center mt-8 ">

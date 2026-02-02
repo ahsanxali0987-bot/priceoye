@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "./Navbar.jsx";
 import Slide from "./Slide.jsx";
 import AutoPlay from "./AutoPlay.jsx";
 import Cards4 from "./Cards4.jsx";
@@ -18,7 +17,6 @@ import Image1 from "./Image1.jsx";
 import Card from "./Card.jsx";
 import Cards5 from "./Cards5.jsx";
 import Footer2 from "./Footer2.jsx";
-import Login from "./Login.jsx";
 
 const App = ({ list }) => {
   return (
@@ -39,6 +37,7 @@ const App = ({ list }) => {
       <Bar />
       <Cards11 list={list} />
       <Cards10 />
+      <Footer />
       <Footer2 />
     </div>
   );

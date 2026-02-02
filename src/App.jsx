@@ -1,9 +1,14 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./Navbar.jsx";
 import Hoe from "./Hoe.jsx";
 import Login from "./Login.jsx";
-import Navbar from "./Navbar.jsx";
-import Footer from "./Footer.jsx";
+import About from "./About.jsx";
+import Career from "./Career.jsx";
+import Faqs from "./Faqs.jsx";
+import Plans from "./Plans.jsx";
+import Terms from "./Terms.jsx";
+import Warranty from "./Warranty.jsx";
 
 const list = [
   {
@@ -486,14 +491,19 @@ const list = [
 
 const App = () => {
   return (
-    <div className="bg-[#f1f3f6]  pb-[140px] md:pb-0">
+    <div className="bg-[#f1f3f6] min-h-screen pb-[140px] md:pb-0">
       <BrowserRouter>
         <Navbar list={list} />
         <Routes>
           <Route path="/" element={<Hoe list={list} />} />
+          <Route path="/About" element={<About />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="/Career" element={<Career />} />
+          <Route path="/Faqs" element={<Faqs />} />
+          <Route path="/Plans" element={<Plans />} />
+          <Route path="/Terms" element={<Terms />} />
+          <Route path="/Warranty" element={<Warranty />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </div>
   );
