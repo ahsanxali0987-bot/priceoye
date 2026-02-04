@@ -231,7 +231,7 @@ const Faqs = () => {
                           </p>
                         )}
                         {ansitem.list && (
-                          <ul className="list-decimal list-inside ml-5 mt-2 space-y-1">
+                          <ul className="list-decimal list-inside mt-2 space-y-1">
                             {ansitem.list.map((listItem, i) => (
                               <li
                                 key={i}
