@@ -1,6 +1,37 @@
 import React from "react";
 
 const Career = () => {
+  const infoTexts = [
+    {
+      text: (
+        <>
+          Share your resume at{" "}
+          <span className="text-[#48afff]">talent@priceoye.pk</span> with the
+          relevant subject line.
+        </>
+      ),
+    },
+    {
+      text: (
+        <>
+          To explore the most recent job opportunities, check out our LinkedIn
+          page at{" "}
+          <span className="text-[17px] text-[#48afff]">
+            linkedin.com/company/priceoye/
+          </span>
+        </>
+      ),
+    },
+    {
+      text: (
+        <>
+          See what our current employees have to say about our working culture
+          at Glassdoor.
+        </>
+      ),
+    },
+  ];
+
   return (
     <div className="bg-white min-h-screen p-[28px]">
       <article>
@@ -26,22 +57,11 @@ const Career = () => {
         </div>
         <div className="flex flex-col gap-4 items-center">
           <p className="text-[20px] font-[500]">Come Join us.</p>
-          <p className="text-[13px] text-[#000000]">
-            Share your resume at{" "}
-            <span className="text-[#48afff]">talent@priceoye.pk</span> with the
-            relevant subject line.
-          </p>
-          <p className="text-[13px] text-[#000000]">
-            To explore the most recent job opportunities, check out our LinkedIn
-            page at{" "}
-            <span className="text-[17px] text-[#48afff]">
-              linkedin.com/company/priceoye/
-            </span>
-          </p>
-          <p className="text-[13px] text-[#000000]">
-            See what our current employees have to say about our working culture
-            at Glassdoor.
-          </p>
+          {infoTexts.map((item, index) => (
+            <p key={index} className="text-[13px] text-[#000000]">
+              {item.text}
+            </p>
+          ))}
           <p className="text-[#48afff]">Working at Priceoye</p>
         </div>
       </article>

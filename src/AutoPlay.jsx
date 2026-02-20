@@ -13,6 +13,12 @@ const bannerImages = [
   "https://images.priceoye.pk/banners/pakistan-priceoye-slider-thnsh.jpg",
   "https://images.priceoye.pk/banners/pakistan-priceoye-slider-1o1v2.jpg",
   "https://images.priceoye.pk/banners/pakistan-priceoye-slider-jdzq6.webp",
+  "https://images.priceoye.pk/banners/pakistan-priceoye-slider-38ubk.webp",
+  "https://images.priceoye.pk/banners/pakistan-priceoye-slider-wzyo3.webp",
+  "https://images.priceoye.pk/banners/pakistan-priceoye-slider-gradl.webp",
+  "https://images.priceoye.pk/banners/pakistan-priceoye-slider-tbawa.webp",
+  "https://images.priceoye.pk/banners/pakistan-priceoye-slider-js9gf.webp",
+  "https://images.priceoye.pk/banners/pakistan-priceoye-slider-i9mnd.webp",
 ];
 
 const PrevArrow = ({ onClick }) => (

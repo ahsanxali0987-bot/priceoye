@@ -3,9 +3,10 @@ import Footer3 from "./Footer3";
 import { FaPlus } from "react-icons/fa6";
 import { CgLoadbar } from "react-icons/cg";
 import Procedures from "./Procedures";
+import { FaArrowUp } from "react-icons/fa";
 
 const Plans = () => {
-  const [activeQuestion, setActiveQuestion] = useState(null);
+  const [activeQuestion, setActiveQuestion] = useState(0);
 
   const toggleQuestion = (index) => {
     setActiveQuestion(activeQuestion === index ? null : index);
@@ -69,8 +70,19 @@ const Plans = () => {
     },
   ];
 
+  const scroll = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <div className="bg-white min-h-screen no-scrollbar overflow-y-auto">
+    <div className="bg-white min-h-screen no-scrollbar relative overflow-y-auto">
+      <button
+        onClick={scroll}
+        aria-label="Scroll to top"
+        className="fixed bottom-14 right-8 z-50 p-[10px] bg-[#6b6b6b] text-white shadow-2xl transition-all duration-300 hover:p-3 active:scale-90 opacity-100"
+      >
+        <FaArrowUp size={20} />
+      </button>
       <article className="p-[28px] max-w-[1110px] m-auto">
         <div>
           <img

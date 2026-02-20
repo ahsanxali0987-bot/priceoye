@@ -24,7 +24,7 @@ const Navbar = ({ list }) => {
   const [showResults, setShowResults] = useState(0);
 
   return (
-    <div className="relative z-50">
+    <div id="navbar" className="relative z-50">
       <div className="bg-[#48afff] h-[55px] md:h-[72px] flex items-center px-4 justify-between">
         <div className="flex items-center gap-2 md:gap-4 text-white">
           <RiMenu2Fill

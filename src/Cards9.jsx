@@ -17,7 +17,7 @@ const Cards9 = () => {
       h4: "49% OFF",
     },
     {
-      src: "https://static.priceoye.pk/images/product-placeholder.gif",
+      src: "https://images.priceoye.pk/xiaomi-15t-pro-pakistan-priceoye-54bj6-270x270.webp",
       h1: "Xiaomi 15T",
       h2: "Rs 157,999",
       h3: "Rs 169,999",

@@ -178,39 +178,15 @@ const Popup = ({ shows, hides }) => {
   ];
 
   const navigation = [
-    {
-      name: "About",
-      path: "/About",
-    },
-    {
-      name: "FAQS",
-      path: "/Faqs",
-    },
-    {
-      name: "Careers",
-      path: "/Career",
-    },
-    {
-      name: "Contact",
-    },
-    {
-      name: "Privacy Policy",
-    },
-    {
-      name: "Press & Blog",
-    },
-    {
-      name: "Installments Plan",
-      path: "/Plans",
-    },
-    {
-      name: "Terms & Condition",
-      path: "/Terms",
-    },
-    {
-      name: "Warranty Center",
-      path: "/Warranty",
-    },
+    { name: "About", path: "/about" },
+    { name: "FAQS", path: "/faqs" },
+    { name: "Careers", path: "/careers" },
+    { name: "Contact", path: "/contact" },
+    { name: "Privacy Policy", path: "/privacy" },
+    { name: "Press & Blog", path: "/blog" },
+    { name: "Installments Plan", path: "/bnpl" },
+    { name: "Terms & Condition", path: "/terms" },
+    { name: "Warranty Center", path: "/warranty-center" },
   ];
 
   const [open, setopen] = useState(null);
@@ -230,7 +206,7 @@ const Popup = ({ shows, hides }) => {
         onClick={hides}
       ></div>
       <div
-        className={`fixed h-screen w-full md:w-[358px] bg-white shadow-2xl overflow-y-scroll no-scrollbar scroll-smooth inset-y-0 left-0 transform transition-transform duration-500 ease-in-out ${
+        className={`fixed h-screen w-full md:w-[358px] bg-white shadow-2xl overflow-y-scroll scroll-smooth inset-y-0 left-0 transform transition-transform duration-500 ease-in-out ${
           shows ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -244,7 +220,7 @@ const Popup = ({ shows, hides }) => {
             </button>
           </div>
           <div className="bg-[#48afff] py-2">
-            <Link to="/Hoe">
+            <Link to="/Home">
               <img
                 className="md:w-[100px] w-[125px]"
                 src="https://static.priceoye.pk/images/logo.svg"

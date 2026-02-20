@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Footer3 from "./Footer3";
 import Procedures from "./Procedures";
 import { CgLoadbar } from "react-icons/cg";
-import { FaPlus } from "react-icons/fa";
+import { FaArrowUp, FaPlus } from "react-icons/fa";
 
 const Terms = () => {
-  const [activeQuestion, setActiveQuestion] = useState(null);
+  const [activeQuestion, setActiveQuestion] = useState(0);
 
   const toggleQuestion = (index) => {
     setActiveQuestion(activeQuestion === index ? null : index);
@@ -26,8 +26,19 @@ const Terms = () => {
     },
   ];
 
+  const scroll = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white relative min-h-screen">
+      <button
+        onClick={scroll}
+        aria-label="Scroll to top"
+        className="fixed bottom-14 right-8 z-50 p-[10px] bg-[#6b6b6b] text-white shadow-2xl transition-all duration-300 hover:p-3 active:scale-90 opacity-100"
+      >
+        <FaArrowUp size={20} />
+      </button>
       <article className="max-w-[1050px] m-auto">
         <h1 className="text-center font-[500] text-[22px] py-[20px]">
           Terms and Conditions

@@ -17,13 +17,15 @@ import Image1 from "./Image1.jsx";
 import Card from "./Card.jsx";
 import Cards5 from "./Cards5.jsx";
 import Footer2 from "./Footer2.jsx";
+import Image2 from "./Image2.jsx";
 
 const App = ({ list }) => {
   return (
-    <div className="bg-[#f1f3f6]  pb-[140px] md:pb-0">
+    <div className="bg-[#f1f3f6]">
       <Popup />
       <Slide />
       <AutoPlay />
+      <Image2 />
       <Card />
       <Imege />
       <Cards3 />

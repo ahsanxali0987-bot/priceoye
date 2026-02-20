@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
-import Hoe from "./Hoe.jsx";
+import Home from "./Home.jsx";
 import Login from "./Login.jsx";
 import About from "./About.jsx";
 import Career from "./Career.jsx";
@@ -9,6 +9,8 @@ import Faqs from "./Faqs.jsx";
 import Plans from "./Plans.jsx";
 import Terms from "./Terms.jsx";
 import Warranty from "./Warranty.jsx";
+import Policy from "./Policy.jsx";
+import Contact from "./Contact.jsx";
 
 const list = [
   {
@@ -495,14 +497,16 @@ const App = () => {
       <BrowserRouter>
         <Navbar list={list} />
         <Routes>
-          <Route path="/" element={<Hoe list={list} />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Career" element={<Career />} />
-          <Route path="/Faqs" element={<Faqs />} />
-          <Route path="/Plans" element={<Plans />} />
-          <Route path="/Terms" element={<Terms />} />
-          <Route path="/Warranty" element={<Warranty />} />
+          <Route path="/" element={<Home list={list} />} />
+          <Route path="/about" element={<About list={list} />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/careers" element={<Career />} />
+          <Route path="/faqs" element={<Faqs />} />
+          <Route path="/bnpl" element={<Plans />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/warranty-center" element={<Warranty />} />
+          <Route path="/privacy" element={<Policy />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </div>
