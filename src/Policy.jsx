@@ -252,15 +252,15 @@ const Policy = () => {
                   onClick={() => toggleQuestion(index)}
                 >
                   <span>
-                    {activeQuestion === index ? 
+                    {activeQuestion === index ? (
                       <div className="flex items-center justify-center text-[#707070] w-[35px] h-[35px] rounded-full bg-[#efefef]">
                         <CgLoadbar size={20} />
                       </div>
-                     : 
+                    ) : (
                       <div className="font-[500] text-[#707070]">
                         <FaPlus />
                       </div>
-                    }
+                    )}
                   </span>
                   <span className="text-[14px] font-[500] text-[#202020]">
                     {item.q}

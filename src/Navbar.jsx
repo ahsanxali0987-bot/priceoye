@@ -32,11 +32,13 @@ const Navbar = ({ list }) => {
             onClick={() => setOpen(true)}
             className="cursor-pointer"
           />
-          <img
-            src="https://static.priceoye.pk/images/logo.svg"
-            alt="logo"
-            className="w-24 md:w-32"
-          />
+          <Link to="/">
+            <img
+              src="https://static.priceoye.pk/images/logo.svg"
+              alt="logo"
+              className="w-24 md:w-32"
+            />
+          </Link>
         </div>
         <div className="flex-1 max-w-[500px] px-2 md:px-4 relative">
           <div className="flex items-center bg-white rounded-md md:rounded-lg overflow-hidden h-[38px] md:h-[48px]">

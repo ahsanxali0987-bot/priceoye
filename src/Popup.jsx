@@ -187,6 +187,7 @@ const Popup = ({ shows, hides }) => {
     { name: "Installments Plan", path: "/bnpl" },
     { name: "Terms & Condition", path: "/terms" },
     { name: "Warranty Center", path: "/warranty-center" },
+    { name: "Asli Warranty Challenge", path: "/asli-warranty-challenge" },
   ];
 
   const [open, setopen] = useState(null);
@@ -220,7 +221,7 @@ const Popup = ({ shows, hides }) => {
             </button>
           </div>
           <div className="bg-[#48afff] py-2">
-            <Link to="/Home">
+            <Link to="/">
               <img
                 className="md:w-[100px] w-[125px]"
                 src="https://static.priceoye.pk/images/logo.svg"

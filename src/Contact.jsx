@@ -148,6 +148,36 @@ const Contact = () => {
     },
   ];
 
+  const contactInfo = [
+    {
+      title: "Contact Us",
+      icon: <p className="bg-[#49afff] w-[34px] h-[34px] rounded-full"></p>,
+      main: "051-111-693-693",
+      sub: "9:00AM to 5:00PM [Mon-Sat]",
+    },
+    {
+      title: "Email",
+      icon: (
+        <p className="bg-[#49afff] w-[34px] h-[34px] rounded-full flex items-center">
+          <IoMail size={18} className="text-white m-auto" />
+        </p>
+      ),
+      main: "hello@priceoye.pk",
+      sub: "9:00AM to 5:00PM [Mon-Sat]",
+    },
+  ];
+
+  const locations = [
+    {
+      img: "https://static.priceoye.pk/images/contact-us/location-pin.svg",
+      text: "3 Offices & Expanding",
+    },
+    {
+      img: "https://static.priceoye.pk/images/contact-us/warehouse.svg",
+      text: "3 Warehouses across Pakistan",
+    },
+  ];
+
   return (
     <div className="bg-white relative min-h-screen ">
       <div className="max-w-[1050px] m-auto">
@@ -212,67 +242,43 @@ const Contact = () => {
             </h1>
           </span>
           <div className="flex justify-between gap-10 mt-10 flex-col md:flex-row">
+            {/* Left Side */}
             <div className="mb-20">
               <h1 className="text-[18px] font-semibold my-4">
                 Still need help?
               </h1>
               <div className="gap-3 flex flex-col">
-                <span className="gap-1 flex flex-col">
-                  <h1 className="text-[13px] font-semibold">Contact Us</h1>
-                  <div className="flex gap-3">
-                    <p className="bg-[#49afff] w-[34px] h-[34px] rounded-full"></p>
-                    <div className="leading-[18px]">
-                      <p className="text-[13px] font-semibold">
-                        051-111-693-693
-                      </p>
-                      <p className="text-[#757575] text-[13px]">
-                        9:00AM to 5:00PM [Mon-Sat]
-                      </p>
+                {contactInfo.map((item, index) => (
+                  <span key={index} className="gap-1 flex flex-col">
+                    <h1 className="text-[13px] font-semibold">{item.title}</h1>
+                    <div className="flex gap-3">
+                      {item.icon}
+                      <div className="leading-[18px]">
+                        <p className="text-[13px] font-semibold">{item.main}</p>
+                        <p className="text-[#757575] text-[13px]">{item.sub}</p>
+                      </div>
                     </div>
-                  </div>
-                </span>
-                <span className="gap-1 flex flex-col">
-                  <h1 className="text-[13px] font-semibold">Email</h1>
-                  <div className="flex gap-3">
-                    <p className="bg-[#49afff] w-[34px] h-[34px] rounded-full flex items-center">
-                      <IoMail size={18} className="text-white m-auto" />
-                    </p>
-                    <div className="leading-[18px]">
-                      <p className="text-[13px] font-semibold">
-                        hello@priceoye.pk
-                      </p>
-                      <p className="text-[#757575] text-[13px]">
-                        9:00AM to 5:00PM [Mon-Sat]
-                      </p>
-                    </div>
-                  </div>
-                </span>
+                  </span>
+                ))}
               </div>
             </div>
+            {/* Right Side */}
             <div className="w-[500px]">
               <h1 className="text-[18px] font-semibold my-4">Our Locations</h1>
               <div className="flex gap-4">
-                <div className="w-[170px] h-[140px] rounded-lg shadow-lg shadow-[#48afff] p-3">
-                  <img
-                    src="https://static.priceoye.pk/images/contact-us/location-pin.svg"
-                    alt=""
-                    className="w-[60px] h-[60px]"
-                  />
-                  <p className="text-[14px] mt-2">3 Offices & Expanding</p>
-                </div>
-                <div className="w-[170px] h-[140px] rounded-lg shadow-lg shadow-[#48afff] p-3">
-                  <img
-                    src="https://static.priceoye.pk/images/contact-us/warehouse.svg"
-                    alt=""
-                    className="w-[60px] h-[60px]"
-                  />
-                  <p className="text-[14px] mt-2">
-                    3 Warehouses across Pakistan
-                  </p>
-                </div>
+                {locations.map((item, index) => (
+                  <div
+                    key={index}
+                    className="w-[170px] h-[140px] rounded-lg shadow-lg shadow-[#48afff] p-3"
+                  >
+                    <img src={item.img} alt="" className="w-[60px] h-[60px]" />
+                    <p className="text-[14px] mt-2">{item.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
+          {/* Updates Section */}
           <span className="leading-[40px]">
             <h1 className="text-[18px] font-semibold">Updates</h1>
             <p className="text-[12px]">
