@@ -35,7 +35,6 @@ const Footer2 = () => {
             Sign in for the best experience
           </p>
         </div>
-
         <button className="px-4 py-2 text-sm font-[500] rounded-md border-2 border-white transition-all duration-300 bg-white text-[#48afff] hover:bg-transparent hover:text-white active:scale-95">
           Sign in
         </button>

@@ -22,7 +22,6 @@ import Image2 from "./Image2.jsx";
 const App = ({ list }) => {
   return (
     <div className="bg-[#f1f3f6]">
-      <Popup />
       <Slide />
       <AutoPlay />
       <Image2 />

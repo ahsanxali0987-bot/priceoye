@@ -351,7 +351,7 @@ const About = () => {
                   {val.label}
                 </p>
                 <p className="text-[#202020] text-[13px] hidden md:block">
-                  {val.para}
+   a               {val.para}
                 </p>
               </div>
             </div>

@@ -97,23 +97,21 @@ const Plans = () => {
             </h1>
           </div>
           <div className="">
-            <div className="">
-              <p className="text-[#202020] text-[12.6px] leading-[18px]">
-                Priceoye offers Easy Monthly Installments with an easy
-                interest-free payment plan to enable its customers to access and
-                purchase the items they want and need while managing their
-                finances during the turbulent economy. With multiple payment
-                tenures and easy interest-free installments it intends to help
-                people spend responsibly without incurring interest or extended
-                debt.
-              </p>
-              <p className="text-[#202020] text-[12.6px] leading-[18px]">
-                Easy Monthly Installment plan (EMI) is available for credit card
-                holders. EMI plan applies for all products with a value of PKR
-                10,000 or above. Please click the links below to reach terms and
-                conditions of the specific plan.
-              </p>
-            </div>
+            <p className="text-[#202020] text-[12.6px] leading-[18px]">
+              Priceoye offers Easy Monthly Installments with an easy
+              interest-free payment plan to enable its customers to access and
+              purchase the items they want and need while managing their
+              finances during the turbulent economy. With multiple payment
+              tenures and easy interest-free installments it intends to help
+              people spend responsibly without incurring interest or extended
+              debt.
+            </p>
+            <p className="text-[#202020] text-[12.6px] leading-[18px]">
+              Easy Monthly Installment plan (EMI) is available for credit card
+              holders. EMI plan applies for all products with a value of PKR
+              10,000 or above. Please click the links below to reach terms and
+              conditions of the specific plan.
+            </p>
           </div>
           <div className="max-w-xs">
             <ul className="space-y-2 text-[#48b7ff] text-[12px]">
@@ -148,7 +146,7 @@ const Plans = () => {
           <h1 className="text-[#202020] font-[500] text-[16px]">
             How to buy on installments from Priceoye.pk?
           </h1>
-          <ul className="space-y-3 text-sm text-gray-800 leading-[12px]">
+          <ul className="space-y-3 text-gray-800 leading-[12px]">
             {steps.map((step, index) => (
               <li className="text-[#202020] text-[12.6px]" key={index}>
                 {index + 1} - {step}

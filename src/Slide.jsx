@@ -1,122 +1,79 @@
-import React from "react";
-import Slider from "react-slick";
+import React, { useRef } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-const PrevArrow = ({ onClick }) => (
-  <button
-    onClick={onClick}
-    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-[9.5px] rounded-sm opacity-100 transition z-10 
-    hover:bg-black hidden md:block"
-  >
-    <FaArrowLeft size={15} />
-  </button>
-);
+const categories = [
+  { name: "Mobiles", img: "https://static.priceoye.pk/images/home/mobiles.webp" },
+  { name: "Wireless Earbuds", img: "https://static.priceoye.pk/images/home/wireless-earbuds.webp" },
+  { name: "Smart Watches", img: "https://static.priceoye.pk/images/home/smart-watches.webp" },
+  { name: "Trimmers", img: "https://static.priceoye.pk/images/home/trimmers-shaver.webp" },
+  { name: "Power Banks", img: "https://static.priceoye.pk/images/home/power-banks.webp" },
+  { name: "Mobile Chargers", img: "https://static.priceoye.pk/images/home/mobile-chargers.webp" },
+  { name: "Bluetooth Speakers", img: "https://static.priceoye.pk/images/home/bluetooth-speakers.webp" },
+  { name: "Tablets", img: "https://static.priceoye.pk/images/home/tablets.webp" },
+  { name: "Laptops", img: "https://static.priceoye.pk/images/home/laptops.webp" },
+];
 
-const NextArrow = ({ onClick }) => (
-  <button
-    onClick={onClick}
-    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-[9.5px] rounded-sm opacity-100 transition z-10 
-    hover:bg-black hidden md:block"
-  >
-    <FaArrowRight size={15} />
-  </button>
-);
+const CategorySlider = () => {
+  const sliderRef = useRef(null);
 
-const SimpleSlider = () => {
-  const categories = [
-    {
-      name: "Mobiles",
-      img: "https://static.priceoye.pk/images/home/mobiles.webp",
-    },
-    {
-      name: "Wireless Earbuds",
-      img: "https://static.priceoye.pk/images/home/wireless-earbuds.webp",
-    },
-    {
-      name: "Smart Watches",
-      img: "https://static.priceoye.pk/images/home/smart-watches.webp",
-    },
-    {
-      name: "Trimmers",
-      img: "https://static.priceoye.pk/images/home/trimmers-shaver.webp",
-    },
-    {
-      name: "Power Banks",
-      img: "https://static.priceoye.pk/images/home/power-banks.webp",
-    },
-    {
-      name: "Mobile Chargers",
-      img: "https://static.priceoye.pk/images/home/mobile-chargers.webp",
-    },
-    {
-      name: "Bluetooth Speakers",
-      img: "https://static.priceoye.pk/images/home/bluetooth-speakers.webp",
-    },
-    {
-      name: "Tablets",
-      img: "https://static.priceoye.pk/images/home/tablets.webp",
-    },
-    {
-      name: "Laptops",
-      img: "https://static.priceoye.pk/images/home/laptops.webp",
-    },
-  ];
+  const scroll = (direction) => {
+    const { current } = sliderRef;
+    if (!current) return;
 
-  const settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 8,
-    slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: { slidesToShow: 7, slidesToScroll: 3 },
-      },
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 5, slidesToScroll: 2 },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 4, slidesToScroll: 2, arrows: false },
-      },
-      {
-        breakpoint: 480,
-        settings: { slidesToShow: 3.5, slidesToScroll: 2, arrows: false },
-      },
-    ],
+    const scrollAmount = 300;
+    current.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
   };
 
   return (
-    <div className="bg-white h-[80px] px-4 sm:px-4 md:px-6 lg:px-8">
-      <div className="max-w-[1210px] mx-auto relative">
-        <Slider {...settings}>
-          {categories.map((cat, index) => (
+    <div className="bg-white py-3 relative">
+      <div className="max-w-[1210px] mx-auto px-4 relative">
+
+        {/* Left Arrow */}
+        <button
+          onClick={() => scroll("left")}
+          className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black text-white p-2 rounded-sm z-10"
+        >
+          <FaArrowLeft size={14} />
+        </button>
+
+        {/* Scroll Container */}
+        <div
+          ref={sliderRef}
+          className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar"
+        >
+          {categories.map((cat) => (
             <div
-              key={index}
-              className="outline-none cursor-pointer group hover:border-b-[3px] hover:border-[#48afff] hover:bg-[#f1f3f6]"
+              key={cat.name}
+              className="snap-start shrink-0 w-[80px] cursor-pointer group text-center"
             >
-              <div className="flex flex-col items-center justify-center text-center py-[6px]">
-                <div>
-                  <img
-                    src={cat.img}
-                    alt={cat.name}
-                    className="w-[45px] h-[45px] object-contain"
-                  />
-                </div>
-                <p className="text-[12.5px] font-[370] text-[#404040]">
+              <div className="flex flex-col items-center">
+                <img
+                  src={cat.img}
+                  alt={cat.name}
+                  className="w-[45px] h-[45px] object-contain"
+                />
+                <p className="text-[12px] text-[#404040] mt-1 group-hover:text-[#48afff]">
                   {cat.name}
                 </p>
               </div>
             </div>
           ))}
-        </Slider>
+        </div>
+
+        {/* Right Arrow */}
+        <button
+          onClick={() => scroll("right")}
+          className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black text-white p-2 rounded-sm z-10"
+        >
+          <FaArrowRight size={14} />
+        </button>
+
       </div>
     </div>
   );
 };
 
-export default SimpleSlider;
+export default CategorySlider;

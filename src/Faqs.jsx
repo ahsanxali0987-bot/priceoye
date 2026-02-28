@@ -238,7 +238,7 @@ const Faqs = () => {
                         </h3>
                         {ansitem.ans && (
                           <p className="text-[#707070] leading-relaxed">
-                            {ansitem.ans}
+                            {ansitem.ans} 
                           </p>
                         )}
                         {ansitem.list && (
